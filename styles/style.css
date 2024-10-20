@@ -93,6 +93,50 @@ ol {
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  padding-bottom: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+  gap: 5px;
+  background: transparent;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__textfield {
+  display: flex;
+  width: 225px;
+  height: 27px;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: rgba(255, 255, 255, 0.70);
+  font: inherit;
+  background-color: transparent;
+  appearance: none;
 }
 
 .content__details {
@@ -129,13 +173,6 @@ ol {
   flex-grow: 1;
 }
 
-.search-form__fieldset-title {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-  padding-bottom: 5px;
-}
-
 .title {
   font-family: Oswald, sans-serif;
   font-weight: 700;
@@ -167,36 +204,6 @@ ol {
   line-height: 90%;
 }
 
-.search-form__label {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  cursor: pointer;
-  gap: 5px;
-  background: transparent;
-}
-
-.search-form__checkbox-list {
-  display: flex;
-  gap: 15px;
-}
-
-.search-form__pseudo-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 19px;
-  height: 19px;
-  border: 1px solid #fff;
-}
-
-.search-form__textfield {
-  display: flex;
-  width: 225px;
-  height: 27px;
-
-}
-
 .button {
   cursor: pointer;
   color: #fff;
@@ -218,4 +225,43 @@ ol {
 
 .more-button {
   inline-size: 100%;
+}
+
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: "";
+  display: block;
+  inline-size: 15px;
+  block-size: 15px;
+  background-color: #fff;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  outline: 1px solid #fff;
+  background: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
 }
